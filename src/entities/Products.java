@@ -21,4 +21,14 @@ public class Products {
         this.manufacturingDate = manufaturingDate;
         this.expirationDate = expirationDate;
     }
+
+    public Products(String name, Double price, String supplier,
+        Integer quantityInStock, Date manufaturingDate
+    ) {
+        this.name = name;
+        this.price = price;
+        this.supplier = supplier;
+        this.quantityInStock = quantityInStock;
+        this.manufacturingDate = manufaturingDate;
+    }
 }
