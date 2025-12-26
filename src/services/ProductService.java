@@ -53,4 +53,12 @@ public class ProductService {
         }
         System.out.println("Product updated successfully: " + returnedProduct);
     }
+
+    public void deleteById(Integer id) {
+        Product returnedProduct = productManagerImp.deleteById(id);
+        if (returnedProduct == null) {
+            throw new IllegalArgumentException("id" + id + "does not exist");
+        }
+        System.out.println("Product deleted successfully: " + returnedProduct);
+    }
 }
