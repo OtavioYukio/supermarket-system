@@ -39,4 +39,8 @@ public class ProductController {
         Product product = new Product(name, price, supplier, quantityInStock, manufaturingDate);
         productService.updateById(id, product);
     }
+
+    public void deleteById(Integer id) {
+        productService.deleteById(id);
+    } 
 }
