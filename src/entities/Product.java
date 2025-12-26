@@ -83,4 +83,17 @@ public class Product {
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+        "id=" + id +
+        ", name=" + name +
+        ", price=" + price +
+        ", supplier=" + supplier +
+        ", quantityInStock=" + quantityInStock +
+        ", manufacturingDate=" + manufacturingDate +
+        ", expirationDate=" + expirationDate +
+        "}"; 
+    }
 }
