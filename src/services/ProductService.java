@@ -1,5 +1,7 @@
 package services;
 
+import java.util.List;
+
 import entities.Product;
 import repositories.CrudRepository;
 import repositories.ProductManagerImp;
@@ -25,6 +27,13 @@ public class ProductService {
         Product returnedProduct = productManagerImp.findById(id);
         if (returnedProduct == null) {
             throw new IllegalArgumentException("id " + id +" does not exist");
+        }
+    }
+
+    public void findAll() {
+        List<Product> returnedProducts = productManagerImp.findAll();
+        if (returnedProducts.isEmpty()) {
+            System.out.println("There are no products listed at the moment.");
         }
     }
 }
