@@ -21,4 +21,8 @@ public class ProductManagerImp implements CrudRepository<Product> {
         }
         return null;
     }
+
+    public List<Product> findAll() {
+        return products;
+    }
 }
