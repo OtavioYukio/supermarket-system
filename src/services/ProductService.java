@@ -17,6 +17,14 @@ public class ProductService {
         if (product.getName().trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid product name");
         }
-        productManagerImp.save(product);
+        Product newProduct = productManagerImp.save(product);
+        System.out.println("Product saved successfully: " + newProduct);
+    }
+
+    public void findById(Integer id) {
+        Product returnedProduct = productManagerImp.findById(id);
+        if (returnedProduct == null) {
+            throw new IllegalArgumentException("id " + id +" does not exist");
+        }
     }
 }
