@@ -25,4 +25,19 @@ public class ProductManagerImp implements CrudRepository<Product> {
     public List<Product> findAll() {
         return products;
     }
+
+    public Product updateById(Integer id, Product newProduct) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                product.setName(newProduct.getName());
+                product.setPrice(newProduct.getPrice());
+                product.setSupplier(newProduct.getSupplier());
+                product.setQuantityInStock(newProduct.getQuantityInStock());
+                product.setManufacturingDate(newProduct.getManufacturingDate());
+                product.setExpirationDate(newProduct.getExpirationDate());
+                return product;
+            }
+        }
+        return null;
+    }
 }
