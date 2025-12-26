@@ -1,5 +1,8 @@
 package entities;
 
+import controllers.EmployeeController;
+import services.EmployeeIDGenerator;
+
 public class Employee {
     private Integer id;
     private String name;
@@ -11,8 +14,12 @@ public class Employee {
     private Role role;
     private Boolean active = true;
 
+    EmployeeIDGenerator employeeIDGenerator = new EmployeeIDGenerator();
+    EmployeeController employeeController = new EmployeeController();
+
     public Employee(String name, String password, String phoneNumber,
                     String email, String cpf, Double salary, Role role) {
+        this.id = employeeIDGenerator.generateId(employeeController.findAll());
         this.name = name;
         this.password = password;
         this.phoneNumber = phoneNumber;

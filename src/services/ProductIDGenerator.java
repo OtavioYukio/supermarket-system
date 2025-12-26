@@ -6,7 +6,6 @@ import java.util.Random;
 import entities.Product;
 
 public class ProductIDGenerator extends IDGenerator<Product> {
-    @Override
     protected void setUsageStatus(List<Product> products, Integer generatedId) {
         for (Product product : products) {
             if (product.getId().equals(generatedId)) {
