@@ -40,4 +40,14 @@ public class ProductManagerImp implements CrudRepository<Product> {
         }
         return null;
     }
+
+    public Product deleteById(Integer id) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                products.remove(product);
+                return product;
+            }
+        }
+        return null;
+    }
 }
