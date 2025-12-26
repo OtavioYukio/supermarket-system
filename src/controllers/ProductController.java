@@ -28,9 +28,5 @@ public class ProductController {
         productService.findAll();
     }
 
-    public void updateById(Integer id, String name, Double price, String supplier, Integer quantityInStock,
-    Date manufaturingDate, Date expirationDate) {
-        Product product = new Product(name, price, supplier, quantityInStock, manufaturingDate, expirationDate);
-        productService.updateById(quantityInStock, product);
-    }
+
 }
