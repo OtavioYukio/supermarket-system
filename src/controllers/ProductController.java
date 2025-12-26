@@ -34,4 +34,9 @@ public class ProductController {
         productService.updateById(id, product);
     }
 
+    public void updateById(Integer id, String name, Double price, String supplier, Integer quantityInStock,
+    Date manufaturingDate) {
+        Product product = new Product(name, price, supplier, quantityInStock, manufaturingDate);
+        productService.updateById(id, product);
+    }
 }
