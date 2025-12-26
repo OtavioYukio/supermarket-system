@@ -36,4 +36,21 @@ public class ProductService {
             System.out.println("There are no products listed at the moment.");
         }
     }
+
+    public void updateById(Integer id, Product newProduct) {
+        if (newProduct.getPrice() <= 0) {
+            throw new IllegalArgumentException("Invalid product price");
+        }
+        if (newProduct.getQuantityInStock() < 0) {
+            throw new IllegalArgumentException("Invalid quantity of products in stock");
+        }
+        if (newProduct.getName().trim().isEmpty()) {
+            throw new IllegalArgumentException("Invalid product name");
+        }
+        Product returnedProduct = productManagerImp.updateById(id, newProduct);
+        if (returnedProduct == null) {
+            throw new IllegalArgumentException("id" + id + "does not exist");
+        }
+        System.out.println("Product updated successfully: " + returnedProduct);
+    }
 }
