@@ -2,6 +2,9 @@ package entities;
 
 import java.util.Date;
 
+import controllers.ProductController;
+import services.ProductIDGenerator;
+
 public class Product {
     private Integer id;
     private String name;
@@ -11,9 +14,13 @@ public class Product {
     private Date manufacturingDate;
     private Date expirationDate;
 
+    ProductIDGenerator productIDGenerator = new ProductIDGenerator();
+    ProductController productController = new ProductController();
+
     public Product(String name, Double price, String supplier,
         Integer quantityInStock, Date manufaturingDate, Date expirationDate
     ) {
+        this.id = productIDGenerator.generateId(productController.findAll());
         this.name = name;
         this.price = price;
         this.supplier = supplier;
@@ -25,6 +32,7 @@ public class Product {
     public Product(String name, Double price, String supplier,
         Integer quantityInStock, Date manufaturingDate
     ) {
+        this.id = productIDGenerator.generateId(productController.findAll());
         this.name = name;
         this.price = price;
         this.supplier = supplier;

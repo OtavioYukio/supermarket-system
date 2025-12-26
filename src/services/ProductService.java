@@ -33,9 +33,6 @@ public class ProductService {
 
     public List<Product> findAll() {
         List<Product> returnedProducts = productManagerImp.findAll();
-        if (returnedProducts.isEmpty()) {
-            System.out.println("There are no products listed at the moment.");
-        }
         return returnedProducts;
     }
 
