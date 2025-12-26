@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.Date;
+import java.util.List;
 
 import entities.Product;
 import services.ProductService;
@@ -20,12 +21,12 @@ public class ProductController {
         productService.save(product);
     }
 
-    public void findById(Integer id) {
-        productService.findById(id);
+    public Product findById(Integer id) {
+        return productService.findById(id);
     }
 
-    public void findAll() {
-        productService.findAll();
+    public List<Product> findAll() {
+        return productService.findAll();
     }
 
     public void updateById(Integer id, String name, Double price, String supplier, Integer quantityInStock,
@@ -42,5 +43,5 @@ public class ProductController {
 
     public void deleteById(Integer id) {
         productService.deleteById(id);
-    } 
+    }
 }

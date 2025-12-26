@@ -23,18 +23,20 @@ public class ProductService {
         System.out.println("Product saved successfully: " + newProduct);
     }
 
-    public void findById(Integer id) {
+    public Product findById(Integer id) {
         Product returnedProduct = productManagerImp.findById(id);
         if (returnedProduct == null) {
             throw new IllegalArgumentException("id " + id +" does not exist");
         }
+        return returnedProduct;
     }
 
-    public void findAll() {
+    public List<Product> findAll() {
         List<Product> returnedProducts = productManagerImp.findAll();
         if (returnedProducts.isEmpty()) {
             System.out.println("There are no products listed at the moment.");
         }
+        return returnedProducts;
     }
 
     public void updateById(Integer id, Product newProduct) {
